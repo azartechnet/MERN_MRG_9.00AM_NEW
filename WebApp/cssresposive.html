@@ -1,0 +1,36 @@
+<style>
+  
+    .flex-container
+    {
+        display: flex;
+        flex-direction: row;
+        font-size: 30px;
+        text-align: center;
+    }
+    .flex-item-left
+    {
+        background-color: aqua;
+        padding:10px;
+        flex:50%;
+    }
+    .flex-item-right
+    {
+        background-color: blue;
+        padding: 10px;
+        flex:50%
+    }
+    @media(max-width:800px)
+    {
+    .flex-container
+    {
+
+        flex-direction: row;
+        background-color: rebeccapurple;
+ 
+    }
+}
+</style>
+<div class="flex-container">
+   <div class="flex-item-left">1</div>
+   <div class="flex-item-right">2</div>
+</div>
