@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            h2
+            {
+                width: 400px;
+                background-color: orange;
+                animation-name: text;
+                animation-duration: 3s;
+            }
+            #f1
+            {
+                animation-fill-mode: none;
+            }
+            #f2
+            {
+                animation-fill-mode: forwards;
+            }
+            #f3
+            {
+                animation-fill-mode: backwards;
+            }
+            #f4
+            {
+                animation-fill-mode: both;
+            }
+            @keyframes text
+            {
+                from
+                {
+                    margin-left: 0%;
+                    background-color: aqua;
+                }
+                to
+                {
+                    margin-left: 60%;
+                    background-color: orange;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="f1">None</h2>
+        <h2 id="f2">Forward</h2>
+        <h2 id="f3">Backward</h2>
+        <h2 id="f4">Both</h2>
+    </body>
+</html>
