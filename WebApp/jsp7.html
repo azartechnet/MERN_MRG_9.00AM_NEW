@@ -1,0 +1,12 @@
+<p>Add::<span id="d1"></span></p>
+<p>Mult::<span id="d2"></span></p>
+<p>Lessthan::<span id="d3"></span></p>
+<p>Greaterthan::<span id="d4"></span></p>
+<script>
+    var a1=parseInt(prompt("Enter the a1 value is::"))
+    var a2=parseInt(prompt("Enter the a2 value is::"))
+    document.getElementById("d1").innerHTML=a1+a2;
+    document.getElementById("d2").innerHTML=a1*a2;
+    document.getElementById("d3").innerHTML=(a1>a2);
+    document.getElementById("d4").innerHTML=((a1>a2)&&(a2<a1));
+</script>
