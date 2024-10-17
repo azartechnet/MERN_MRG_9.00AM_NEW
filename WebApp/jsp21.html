@@ -1,0 +1,18 @@
+<script>
+     var n, first = 0, second = 1, next, c;
+
+     n=parseInt(prompt("Enter the n value is::"))
+     
+     for ( c = 0 ; c < n ; c++ )
+  {
+     if ( c <= 1 )
+        next = c;
+     else
+     {
+        next = first + second;
+        first = second;
+        second = next;
+     }
+    document.write(next)
+  }
+</script>

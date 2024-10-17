@@ -1,0 +1,20 @@
+<script>
+    s=0;
+    n=parseInt(prompt("Enter the n value is::"))
+temp=n
+while(n>0)
+  {
+    rem=n%10;
+    s=s+rem*rem*rem;
+    n=Math.floor(n/10);
+    }
+
+if(temp==s)
+{
+    alert("Armstrong number");
+}
+else
+{
+    alert("Not a Armstrong number");
+}
+</script>
