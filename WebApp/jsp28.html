@@ -1,0 +1,11 @@
+<div>FirstDivElements</div>
+<div>SecondDivElements</div>
+<p>This is para</p>
+<script>
+    var divElements=document.getElementsByTagName('p');
+    for(var i=0;i<divElements.length;i++)
+{
+    divElements[i].style.color="red";
+    document.write(divElements[i].textContent)
+}
+</script>

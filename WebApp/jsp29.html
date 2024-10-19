@@ -1,0 +1,19 @@
+<style>
+    .example
+    {
+        color: blue;
+    }
+    #unique
+    {
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div class="example">First Division</div>
+    <div id="unique">Second division</div>
+    <script>
+        var firstElement=document.querySelector('.example')
+        firstElement.style.color='red';
+        console.log("FirstElement::",firstElement.textContent)
+    </script>
+</body>

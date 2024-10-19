@@ -1,0 +1,13 @@
+<form>
+    UserName:<input type="text" name="u2" value="azar"/>
+
+    <br/>
+    <input type="submit" value="ClickHere"/>
+</form>
+<script>
+ var usernameElements=document.getElementsByName('u2');
+ for(var i=0;i<usernameElements.length;i++)
+ {
+     console.log(usernameElements[i].value)
+ }
+</script>
