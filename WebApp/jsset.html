@@ -1,0 +1,14 @@
+<!--A Javascript set is a collection of unique values 
+   Each value can only  appear once in the set. 
+
+-->
+<p id="d1"></p>
+<script>
+    //create a set
+    var mySet = new Set(['a','b','c','d']);
+    //add an element to the set
+    mySet.add('e');
+    mySet.add('f');
+    //display the value
+    document.getElementById('d1').innerHTML = Array.from(mySet).join(', ');
+</script>
