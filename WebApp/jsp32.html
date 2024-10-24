@@ -1,0 +1,14 @@
+<body>
+    <form>
+        Enter the name is::<input type="text" onfocus="myfun(this)"/>
+        <input type="button" value="Click" onclick="myfun(this)"/>
+    </form>
+    <script>
+        function myfun(obj) {   
+            obj.style.backgroundColor = "red";
+            obj.style.color = "white";
+            obj.style.border = "1px solid black";
+            obj.style.cursor = "pointer";
+            }
+    </script>
+</body>
