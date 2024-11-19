@@ -65,7 +65,7 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<MyElem />); */
 
 //Conditional Rendering
-const x=20;
+/*const x=20;
 let text="";
 if(x>10)
 {
@@ -87,4 +87,89 @@ const MyElem=()=>{
   )
 }
  const r1=ReactDOM.createRoot(document.getElementById('root'))
- r1.render(<MyElem />);
+ r1.render(<MyElem />);*/
+
+ //Task if if-else Nested if else
+
+ /*import './index.css';
+
+ const App=()=>{
+  return(
+    <h1>Welcome</h1>
+  )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<App />); */
+
+ //Function Component
+
+ /*function Sample()
+ {
+  return(
+    <div>
+      <h1>Hello</h1>
+      <form>
+        <label>Enter your name:</label>
+        <input type="text" name="name" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Sample />);*/
+
+ //class Component
+
+ /*class Sample extends React.Component
+ {
+    render()
+    {
+      return(
+        <div>
+          <h1>Hello</h1>
+          <p>Welcome</p>
+        </div>
+      )
+    }
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Sample />);*/
+
+ //function component with arguments
+
+ /*function Sample(props)
+ {
+  return(
+    <div>
+      <h1>Hello {props.name}{props.age}</h1>
+      <p>Welcome</p>
+    </div>
+  )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Sample name="Rahul" age="35"/>);*/
+
+ //React Component in Component
+
+ function Component1()
+ {
+  return(
+    <div>
+      <h1>Hello</h1>
+      <p>Component1</p>
+      <Component2/>
+    </div>
+  )
+ }
+ function Component2()
+ {
+   return(
+    <div>
+      <h1>Hello</h1>
+      <p>Component2</p>
+    </div>
+   )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Component1/>)
