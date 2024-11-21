@@ -152,7 +152,7 @@ const MyElem=()=>{
 
  //React Component in Component
 
- function Component1()
+ /*function Component1()
  {
   return(
     <div>
@@ -172,4 +172,77 @@ const MyElem=()=>{
    )
  }
  const r1=ReactDOM.createRoot(document.getElementById('root'))
- r1.render(<Component1/>)
+ r1.render(<Component1/>)*/
+
+ //constructor using super
+
+ /*class Sample extends React.Component
+ {
+    constructor()
+    {
+      super();
+      this.state={name:"Rahul",age:35}
+    }
+    render()
+    {
+      return(
+        <div>
+          <h1>Hello {this.state.name}{this.state.age}</h1>
+          <p>Welcome</p>
+        </div>
+      )
+    }
+  
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Sample/>)*/
+
+ //constructor using props
+
+ /*class Sample extends React.Component
+ {
+  constructor(props)
+  {
+    super(props);
+    this.state={name:this.props.name,age:this.props.age}
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Hello {this.props.name}{this.state.age}</h1>
+      </div>
+      )
+  }
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Sample name="Rahul " age={35}/>)*/
+
+ //Changing the state object
+
+ class Sample extends React.Component
+ {
+  constructor(props)
+  {
+    super(props);
+    this.state={name:"Rahul",age:35}
+    this.handleClick=this.handleClick.bind(this)
+  }
+  handleClick()
+  {
+    this.setState({age:40})
+  }
+
+  render()
+  {
+      return(
+        <div>
+          <h1>Hello {this.state.name}{this.state.age}</h1>
+          <button onClick={this.handleClick}>Click</button>
+        </div>
+      )
+  }
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Sample/>)
+ 
