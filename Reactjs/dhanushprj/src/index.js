@@ -335,7 +335,7 @@ r1.render(<Football/>)*/
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Football/>)*/
 
-function MissedGoal()
+/*function MissedGoal()
 {
   return<h1>Missed</h1>
 }
@@ -357,5 +357,51 @@ function Football(props)
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Football isGoal={Math.random()>0.5}/>)
+r1.render(<Football isGoal={Math.random()>0.5}/>)*/
+
+//React List using Map
+
+/*function Car(props)
+{
+  return<li>I am {props.b1}</li>
+}
+function Garage()
+{
+   const cars=["BMW","Audi","Toyota"]
+   return(
+    <div>
+      <h1>Garage</h1>
+      <ul>
+        {cars.map((car)=><Car b1={car}/>)}
+      </ul>
+    </div>
+   )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)*/
+
+//React keys
+
+function Car(props)
+{
+  return<li>{props.id}{props.name}</li>
+}
+function Garage()
+{
+  const cars=[
+    {id:1,name:"BMW"},
+    {id:2,name:"Audi"},
+    {id:3,name:"Toyota"}
+    ]
+    return(
+      <div>
+        <h1>Garage</h1>
+        <ul>
+          {cars.map((car)=><Car  id={car.id} name={car.name}/>)}
+        </ul>
+      </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)
  
