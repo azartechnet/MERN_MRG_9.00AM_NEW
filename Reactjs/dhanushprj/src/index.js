@@ -465,7 +465,7 @@ r1.render(<Header/>)*/
 
 //updating getDerivedStateFromProps
 
-class Header extends React.Component
+/*class Header extends React.Component
 {
   constructor(props)
   {
@@ -486,6 +486,37 @@ class Header extends React.Component
         <h1>Header</h1>
         <p>My fav color is {this.state.favcolor}</p>
         <button onClick={this.changeColor}>Change Color</button>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)*/
+
+//shouldComponent update
+
+class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={favcolor:"red"}
+  }
+  static shouldComponentUpdate(nextProps,nextState)
+  {
+    console.log("ShouldComponentUpdate")
+    // return nextState.favcolor!==this.state.favcolor;
+  }
+  changeColor=()=>{
+    this.setState({favcolor:"blue"})
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Header</h1>
+        <p>My fav color is {this.state.favcolor}</p>
+        <button type="button" onClick={this.changeColor}>Change Color</button>
       </div>
     )
   }
