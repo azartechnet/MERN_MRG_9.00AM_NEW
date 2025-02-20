@@ -649,7 +649,7 @@ r1.render(<Component1/>)*/
 
 //React useRef
 
-import {useRef} from "react";
+/*import {useRef} from "react";
 function FocusInput()
 {
   const inputRef=useRef(null)
@@ -664,4 +664,54 @@ function FocusInput()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<FocusInput/>)
+r1.render(<FocusInput/>)*/
+
+//Another useState
+
+/*function UserProfile()
+{
+  const [user,setUser]=useState({name:"mohamed",age:25,email:"mohamed@gmail.com"})
+
+  const updateEmail=()=>{
+    setUser({...user,email:"mohamed123@gmail.com"})
+  }
+  return(
+    <div>
+      <h1>name::{user.name}</h1>
+      <h1>age::{user.age}</h1>
+      <h1>email::{user.email}</h1>
+      <button onClick={updateEmail}>update email</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<UserProfile/>)*/
+//useState todolist
+
+function Todolist()
+{
+  const [todos,setTodos]=useState(["Milk","Eggs","Bread"])
+
+  const addTodo=()=>{
+    setTodos([...todos,"Cheese"])
+    }
+    const deleteTodo=(index)=>{
+      setTodos([...todos.slice(0,index),...todos.slice(index+1)])
+      }
+      return(
+        <div>
+          <h1>Todo List</h1>
+          <ul>
+            {todos.map((todo,index)=>
+            <li>{index}{todo}
+            <button onClick={()=>deleteTodo(index)}>Delete</button>
+           
+            </li>
+             )}
+          </ul>
+          <button onClick={()=>addTodo()}>Add</button>
+        </div>
+        )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Todolist/>)
