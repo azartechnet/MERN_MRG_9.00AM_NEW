@@ -47,6 +47,15 @@ app.post("/addpost",(req,res)=>{
         res.send('Post added')
         })
 })
+//getPosts
+app.get("/getposts",(req,res)=>{
+    let sql='select * from posts';
+    db.query(sql,(err,results)=>{
+        if(!err)
+            console.log('Posts fetched')
+        res.json(results)
+        })
+        })
 app.listen(port,()=>{
     console.log(`Server started at port ${port}`)
 })
