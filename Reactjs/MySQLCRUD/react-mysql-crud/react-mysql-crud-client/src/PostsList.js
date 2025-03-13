@@ -29,8 +29,8 @@ const PostsList=()=>{
                     <td>{post.title}</td>
                     <td>{post.body}</td>
                      <td>
-                        <Link className="btn btn-primary">Edit</Link>
-                        <Link className="btn btn-danger">Delete</Link>
+                     <Link to={`/edit/${post.id}`} className="btn btn-warning btn-sm mr-2">Edit</Link>
+                     <button onClick={""} className="btn btn-danger btn-sm">Delete</button>
                      </td>
                 </tr>
             ))}

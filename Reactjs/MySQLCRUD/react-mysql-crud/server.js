@@ -56,6 +56,28 @@ app.get("/getposts",(req,res)=>{
         res.json(results)
         })
         })
+
+//get post by ID
+
+app.get('/getposts',(req,res)=>{
+    let sql=`select * from posts where id=${req.params.id}`;
+    db.query(sql,(err,results)=>{
+        if(!err)
+            console.log('Post fetched')
+        res.json(results)
+        })
+})
+//update posts
+app.put('/updatepost/:id',(req,res)=>{
+    const {id}=req.params;
+    const {title,body}=req.body;
+    let sql=`update posts set title=?,body=? where id=?`;
+    db.query(sql,[title,body,id],(err,results)=>{
+        if(!err)
+            console.log('Post updated')
+        res.send('Post updated')
+        })
+})
 app.listen(port,()=>{
     console.log(`Server started at port ${port}`)
 })
