@@ -78,6 +78,16 @@ app.put('/updatepost/:id',(req,res)=>{
         res.send('Post updated')
         })
 })
+//delete post
+app.delete('/deletepost/:id',(req,res)=>{
+    const {id}=req.params;
+    let sql=`delete from posts where id=?`;
+    db.query(sql,[id],(err,results)=>{
+        if(!err)throw err;
+        res.send('Post deleted')
+        })
+    })
+
 app.listen(port,()=>{
     console.log(`Server started at port ${port}`)
 })

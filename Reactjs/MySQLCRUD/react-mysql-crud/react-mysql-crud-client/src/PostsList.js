@@ -9,6 +9,10 @@ const PostsList=()=>{
         .then(response=>setPosts(response.data))
     },[])
     
+    const handleDelete=async(id)=>{
+      await axios.delete(`http://localhost:3001/deletepost/${id}`)
+      setPosts(posts.filter(post=>post.id!==id))
+    }
     
     return(
       <div className="container mt-5"> 
@@ -30,7 +34,7 @@ const PostsList=()=>{
                     <td>{post.body}</td>
                      <td>
                      <Link to={`/edit/${post.id}`} className="btn btn-warning btn-sm mr-2">Edit</Link>
-                     <button onClick={""} className="btn btn-danger btn-sm">Delete</button>
+                     <button onClick={()=>handleDelete(post.id)} className="btn btn-danger btn-sm">Delete</button>
                      </td>
                 </tr>
             ))}
