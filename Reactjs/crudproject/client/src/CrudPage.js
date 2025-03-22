@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import Axios from "axios";
 
 function CrudPage()
 {
+    const [foodName,setFoodName]=useState("")
+    const [description,setDescription]=useState("")
+
+    //insert
+    const addFoodData=()=>{
+        Axios.post("http://localhost:3001/insert",{foodName,description})
+
+        .then((response)=>{
+            console.log(response)
+            })
+            .catch((err)=>{
+                console.log(err)
+                })
+    }
     return(
         <div className="container">
         <h1>CRUD Page</h1>
@@ -11,17 +26,17 @@ function CrudPage()
                 className="form-control" 
                 placeholder="Food Name" 
                 required 
-                onChange={""} 
+                onChange={(e)=>setFoodName(e.target.value)} 
             />
             <input 
                 type="text" 
                 className="form-control" 
                 placeholder="Food Description" 
                 required 
-                onChange={""} 
+                onChange={(e)=>setDescription(e.target.value)} 
             />
         </div>
-        <button className="btn btn-primary" onClick={""}>Submit</button>
+        <button className="btn btn-primary" onClick={addFoodData}>Submit</button>
 
         <h3 className="mt-4">Get Data From Database</h3>
         <table className="table table-bordered table-striped">
