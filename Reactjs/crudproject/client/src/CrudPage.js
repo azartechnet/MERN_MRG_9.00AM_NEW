@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 function CrudPage()
 {
     const [foodName,setFoodName]=useState("")
     const [description,setDescription]=useState("")
+    const [foodList,setFoodList]=useState([])
 
+    useEffect(()=>{
+        fetchData();
+    },[])
     //insert
     const addFoodData=()=>{
         Axios.post("http://localhost:3001/insert",{foodName,description})
@@ -16,6 +20,13 @@ function CrudPage()
             .catch((err)=>{
                 console.log(err)
                 })
+    }
+    //get data
+    const fetchData=()=>{
+        Axios.get("http://localhost:3001/read").then((response)=>{
+            console.log(response.data)
+            setFoodList(response.data)
+        })
     }
     return(
         <div className="container">
@@ -49,10 +60,14 @@ function CrudPage()
                 </tr>
             </thead>
             <tbody>
-             <td>Apple</td>
-             <td>Delicious fruit</td>
-             <td>Edit</td>
-             <td>Delete</td>
+             {foodList.map((val,key)=>(
+                <tr key={key}>
+                    <td>{val.foodName}</td>
+                    <td>{val.description}</td>
+                    <td><button className="btn btn-primary" onClick={""}>Edit</button></td>
+                    <td><button className="btn btn-danger" onClick={""}>Delete</button></td>
+                </tr>
+             ))}
             </tbody>
         </table>
     </div>
